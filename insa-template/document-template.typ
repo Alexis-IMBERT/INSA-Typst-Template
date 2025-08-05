@@ -294,6 +294,7 @@
   company,
   company-logo,
   company-tutor,
+  gendered-company-tutor: "Maître",
   insa-tutor,
   insa-tutor-suffix: "",
   summary-french,
@@ -310,7 +311,7 @@
     student: ("fr": "Élève-ingénieur{gender-suffix} de l'INSA {insa}", "en": "INSA {insa} Engineering Student"),
     department: ("fr": "Spécialité {department}", "en": "Department {department}"),
     location: ("fr": "Lieu du Stage", "en": "Stage Location"),
-    company-tutor: ("fr": "Maître de Stage", "en": "Training supervisor"),
+    company-tutor: ("fr": "{gendered-company-tutor} de Stage", "en": "Training supervisor"),
     insa-tutor: ("fr": "Correspondant{gender-suffix} pédagogique INSA", "en": "Academic supervisor (INSA)"),
     thanks-heading: ("fr": "Remerciements", "en": "Special Thanks")
   )
@@ -319,9 +320,9 @@
   return insa-document(
     "pfe",
     cover-top-left: [
-      #text(size: 17pt, font: insa-body-fonts, insa-stage-translate("title", lang))\
+      #text(size: 16.5pt, font: insa-body-fonts, insa-stage-translate("title", lang))\
       #text(size: 21pt, font: insa-heading-fonts, weight: "bold", name)\
-      #text(size: 17pt, font: insa-body-fonts)[
+      #text(size: 16.5pt, font: insa-body-fonts)[
         #insa-stage-translate("student", lang, placeholders: ("gender-suffix": student-suffix, "insa": insa-school-name(insa)))\
         #insa-stage-translate("department", lang, placeholders: ("department": department))\
         #year
@@ -334,7 +335,7 @@
       *#insa-stage-translate("location", lang)*\
       #company
 
-      *#insa-stage-translate("company-tutor", lang)*\
+      *#insa-stage-translate("company-tutor", lang, placeholders: ("gendered-company-tutor": gendered-company-tutor))*\
       #company-tutor
 
       *#insa-stage-translate("insa-tutor", lang, placeholders: ("gender-suffix": insa-tutor-suffix))*\
@@ -387,6 +388,7 @@
   company,
   company-logo,
   company-tutor,
+  gendered-company-tutor: "Tuteur",
   insa-tutor,
   insa-tutor-suffix: "",
   summary-french,
@@ -404,7 +406,7 @@
     student: ("fr": "Élève-ingénieur{gender-suffix} de l'INSA {insa}", "en": "INSA {insa} Engineering Student"),
     department: ("fr": "Spécialité {department}", "en": "Department {department}"),
     location: ("fr": "Lieu du Projet de Fin d'Études", "en": "End-of-Study Location"),
-    company-tutor: ("fr": "Tuteur du Projet de Fin d'Études", "en": "Training supervisor"),
+    company-tutor: ("fr": "{gendered-tutor} du Projet de Fin d'Études", "en": "Training supervisor"),
     insa-tutor: ("fr": "Correspondant{gender-suffix} pédagogique INSA", "en": "Academic supervisor (INSA)"),
     defense-date: ("fr": "PFE soutenu le {date}", "en": "EOS project defense on the {date}"),
     thanks-heading: ("fr": "Remerciements", "en": "Special Thanks")
@@ -503,9 +505,9 @@
   return insa-document(
     "pfe",
     cover-top-left: [
-      #text(size: 17pt, font: insa-body-fonts, insa-stage-translate("title", lang))\
+      #text(size: 16.5pt, font: insa-body-fonts, insa-stage-translate("title", lang))\
       #text(size: 21pt, font: insa-heading-fonts, weight: "bold", name)\
-      #text(size: 17pt, font: insa-body-fonts)[
+      #text(size: 16.5pt, font: insa-body-fonts)[
         #insa-stage-translate("student", lang, placeholders: ("gender-suffix": student-suffix, "insa": insa-school-name(insa)))\
         #insa-stage-translate("department", lang, placeholders: ("department": department))\
         #year
@@ -518,7 +520,7 @@
       *#insa-stage-translate("location", lang)*\
       #company
 
-      *#insa-stage-translate("company-tutor", lang)*\
+      *#insa-stage-translate("company-tutor", lang, placeholders: ("gendered-tutor": gendered-company-tutor))*\
       #company-tutor
 
       *#insa-stage-translate("insa-tutor", lang, placeholders: ("gender-suffix": insa-tutor-suffix))*\
